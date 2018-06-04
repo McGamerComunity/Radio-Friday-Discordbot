@@ -3,7 +3,6 @@ package core;
 import com.sun.corba.se.impl.activation.CommandHandler;
 import commands.*;
 import listener.*;
-import listeners.privateMessageListener;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
