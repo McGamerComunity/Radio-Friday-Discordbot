@@ -29,7 +29,7 @@ public class UpdateClient {
 
     private static String lastUpdate = "";
 
-    private static final String API_URL = "https://api.github.com/repos/zekrotja/DiscordBot/releases";
+    private static final String API_URL = "https://api.github.com/repos/McGamerComunity/Radio-Friday-Discordbot/releases";
 
     public static final Release PRE = new Release(getRelease(true));
     public static final Release STABLE = new Release(getRelease(false));
