@@ -1,5 +1,5 @@
 
-package listeners;
+package listener;
 
 import core.commandHandler;
 import net.dv8tion.jda.core.EmbedBuilder;

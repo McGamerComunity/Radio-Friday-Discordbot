@@ -23,16 +23,6 @@ import java.text.ParseException;
 
 
 
-/**
-
- * Created by zekro on 05.06.2017 / 00:10
-
- * DiscordBot/commands.etc
-
- * © zekro 2017
-
- */
-
 
 
 public class Ping implements commands {

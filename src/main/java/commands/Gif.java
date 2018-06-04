@@ -36,18 +36,6 @@ import java.util.stream.Collectors;
 
 
 
-/**
-
- * Created by zekro on 15.09.2017 / 17:09
-
- * DiscordBot.commands.chat
-
- * dev.zekro.de - github.zekro.de
-
- * © zekro 2017
-
- */
-
 
 
 public class Gif implements commands {
