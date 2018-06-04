@@ -36,8 +36,8 @@ public class Info implements commands {
                                 "Coded by McGamer_Comunity | Tim.\n" +
                                         "© 2018 McGamer_Comunity", false)
                         .addField("Information and Links",
-                                "GitHub Repository: \n*bot source is private*\n\n" +
-                                        "Readme/Changelogs: \n*bot source is private*\n\n" +
+                                "GitHub Repository: \n*https://github.com/McGamerComunity/Radio-Friday-Discordbot*\n\n" +
+                                        "Readme/Changelogs: \n*https://github.com/McGamerComunity/Radio-Friday-Discordbot/blob/master/README.md*\n\n" +
                                         "Webpage: \n*https://ragefx.de/*\n\n" +
                                         "Github Profile: \n*https://github.com/McGamerComunity/*", false)
                         .addField("Libraries and Dependencies",
