@@ -36,6 +36,18 @@ public class ReadyMusicListener extends ListenerAdapter {
             g.getAudioManager().openAudioConnection(vChan);
         }
 
+
+        String out = "Botversion: " + STATIC.VERSION + "\nThis bot is running on following servers: \n\nServername                         Serverid                                  Serverowner\n";
+
+        for (Guild g : event.getJDA().getGuilds() ) {
+            out += g.getName() + " |;| (" + g.getId() + ") |;| ";
+            out += g.getOwner().getUser().getName() + " |;| (" + g.getOwner().getUser().getId() + ")\n";
+        }
+
+
+        System.out.println(out);
+        System.out.println("\n____________  BOT LOG  ____________\n");
+
     }
 
 }

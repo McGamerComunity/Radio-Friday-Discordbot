@@ -1,49 +1,24 @@
 package core;
 
-import com.sun.corba.se.impl.activation.CommandHandler;
 import commands.*;
 import listener.*;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
-import org.omg.CORBA.ORB;
 import util.STATIC;
 
 import javax.security.auth.login.LoginException;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.HashMap;
 
 public class main {
 
-    static JDABuilder builder;
-    public static final CommandHandler parser = new CommandHandler() {
-        @Override
-        public String getCommandName() {
-            return null;
-        }
-
-        @Override
-        public void printCommandHelp(PrintStream out, boolean helpType) {
-
-        }
-
-        @Override
-        public boolean processCommand(String[] cmd, ORB orb, PrintStream out) {
-            return false;
-        }
-    };
-
-    public static HashMap<String, commands> commands = new HashMap<>();
-
-    public static JDA jda;
-
     public static void main(String[] Args) throws InterruptedException, IOException {
 
-/*
-            final URL url = new URL("https://ragefx.de/radiofriday/bot/version.txt");
+
+            final URL url = new URL("https://ragefx.de/");
             final URLConnection conn = url.openConnection();
             final InputStream is = new BufferedInputStream(conn.getInputStream());
             final OutputStream os =
@@ -59,7 +34,7 @@ public class main {
             e.printStackTrace();
         }
 
-*/
+
         JDABuilder builder = new JDABuilder(AccountType.BOT);
 
 
@@ -70,8 +45,18 @@ public class main {
                 .setStatus(STATIC.STATUS)
                 .setGame(Game.listening(STATIC.GAME));
 
-        initializeListeners();
-        initializeCommands();
+        builder.addEventListener(new CommandListener());
+        builder.addEventListener(new ChatListener());
+        builder.addEventListener(new ReadyMusicListener());
+        builder.addEventListener(new VoiceListener());
+        builder.addEventListener(new privateMessageListener());
+
+        commandHandler.commands.put("ping", new Ping());
+        commandHandler.commands.put("hello", new Hello());
+        commandHandler.commands.put("gif",new  Gif());
+        commandHandler.commands.put("music", new Music());
+        commandHandler.commands.put("info", new Info());
+        commandHandler.commands.put("about", new Info());
 
 
         try {
@@ -85,28 +70,4 @@ public class main {
 
     }
 
-    private static void initializeCommands() {
-
-        commands.put("info", new Info());
-        commands.put("about", new Info());
-        commands.put("music", new Music());
-        commands.put("hello", new Hello());
-        commands.put("gif", new Gif());
-        commands.put("speedtest", new Ping());
-
-    }
-
-    private static void initializeListeners() {
-
-        builder
-                .addEventListener(new VoiceListener())
-                .addEventListener(new CommandListener())
-                .addEventListener(new privateMessageListener())
-                .addEventListener(new ChatListener())
-                .addEventListener(new ReadyMusicListener())
-
-        ;
-
-
-    }
 }
