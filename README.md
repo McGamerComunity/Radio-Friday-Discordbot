@@ -11,3 +11,6 @@ Momentan befindet sich der bot aber noch in der alpha und ist nur für den Radio
 # Abbruch der Programmierungsarbeiten
 
 da durch einen Unbekannten bug der Bot nicht mehr Startet wird die programmierung nicht eingestellt aber momentan nicht auf Github veröffentlicht
+
+# Die Programmierungsarbeiten gehen weiter der bug wurde Gefixt
+Ich hatte einen kleinen fehler in der main class
